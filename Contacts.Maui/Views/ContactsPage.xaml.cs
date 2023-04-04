@@ -5,15 +5,22 @@ public partial class ContactsPage : ContentPage
 	public ContactsPage()
 	{
 		InitializeComponent();
-	}
 
-	private void btnEditContact_Clicked(object sender, EventArgs e)
-	{
-		Shell.Current.GoToAsync(nameof(EditContactPage));
-    }
+		List<Contact> contacts = new List<Contact>()
+		{
+			new Contact { Name = "John Doe", Email = "johndoe@gmail.com"},
+			new Contact { Name = "Jane Doe", Email = "janedoe@gmail.com"},
+			new Contact { Name = "Tom Hanks", Email = "tomhanks@gmail.com"},
+			new Contact { Name = "Frank Liu", Email = "frankliu@gmail.com"}
+		};
 
-	private void btnAddContact_Clicked(object sender, EventArgs e)
-	{
-		Shell.Current.GoToAsync(nameof(AddContactPage));
+		listContacts.ItemsSource = contacts;
 	}
+}
+
+public class Contact
+{
+	public string Name { get; set; }
+
+	public string Email { get; set; }
 }
