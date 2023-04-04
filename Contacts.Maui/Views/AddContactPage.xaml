@@ -9,5 +9,10 @@
             HorizontalOptions="Center"
             Text="Welcome to .NET MAUI!"
             VerticalOptions="Center" />
+
+        <Button
+            x:Name="btnCancel"
+            Clicked="btnCancel_Clicked"
+            Text="Cancel" />
     </VerticalStackLayout>
 </ContentPage>
