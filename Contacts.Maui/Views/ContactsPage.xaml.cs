@@ -1,3 +1,7 @@
+using Contacts.Maui.Models;
+using System.Collections.ObjectModel;
+using Contact = Contacts.Maui.Models.Contact;
+
 namespace Contacts.Maui.Views;
 
 public partial class ContactsPage : ContentPage
@@ -5,14 +9,13 @@ public partial class ContactsPage : ContentPage
 	public ContactsPage()
 	{
 		InitializeComponent();
+	}
 
-		List<Contact> contacts = new List<Contact>()
-		{
-			new Contact { Name = "John Doe", Email = "johndoe@gmail.com"},
-			new Contact { Name = "Jane Doe", Email = "janedoe@gmail.com"},
-			new Contact { Name = "Tom Hanks", Email = "tomhanks@gmail.com"},
-			new Contact { Name = "Frank Liu", Email = "frankliu@gmail.com"}
-		};
+	protected override void OnAppearing()
+	{
+		base.OnAppearing();
+
+		var contacts = new ObservableCollection<Contact>(ContactRepository.GetContacts());
 
 		listContacts.ItemsSource = contacts;
 	}
@@ -21,7 +24,7 @@ public partial class ContactsPage : ContentPage
 	{
 		if (listContacts.SelectedItem != null)
 		{
-			await Shell.Current.GoToAsync(nameof(EditContactPage));
+			await Shell.Current.GoToAsync($"{nameof(EditContactPage)}?Id={((Contact)listContacts.SelectedItem).ContactId}");
 		}
 	}
 
@@ -29,11 +32,4 @@ public partial class ContactsPage : ContentPage
 	{
 		listContacts.SelectedItem = null;
 	}
-}
-
-public class Contact
-{
-	public string Name { get; set; }
-
-	public string Email { get; set; }
-}
+} 
