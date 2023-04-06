@@ -8,9 +8,17 @@
     <Grid
         Padding="5"
         ColumnDefinitions="*"
-        RowDefinitions="*, 50">
+        RowDefinitions="50, *, 50">
+        <SearchBar
+            x:Name="SearchBar"
+            Grid.Row="0"
+            Grid.Column="0"
+            Placeholder="Search Contact"
+            TextChanged="SearchBar_TextChanged" />
         <ListView
             x:Name="listContacts"
+            Grid.Row="1"
+            Grid.Column="0"
             BackgroundColor="Transparent"
             ItemSelected="listContacts_ItemSelected"
             ItemTapped="listContacts_ItemTapped"
