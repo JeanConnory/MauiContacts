@@ -10,7 +10,7 @@ public partial class Contacts_MVVM_Page : ContentPage
 	{
 		InitializeComponent();
 		_contactsViewModel = contactsViewModel;
-		this.BindingContext = contactsViewModel;
+		this.BindingContext = _contactsViewModel;
 	}
 
 	protected override async void OnAppearing()

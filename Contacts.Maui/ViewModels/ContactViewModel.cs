@@ -28,7 +28,7 @@ namespace Contacts.Maui.ViewModels
 
         public async Task LoadContact(int contactId)
         {
-            this.contact = await _viewContactUseCase.ExecuteAsync(contactId);
+            this.Contact = await _viewContactUseCase.ExecuteAsync(contactId);
         }
 
         //[RelayCommand]
