@@ -56,9 +56,9 @@
         </CollectionView>
 
         <Button
-            x:Name="btnAdd"
             Grid.Row="2"
             Grid.Column="0"
+            Command="{Binding GoToAddContactCommand}"
             Text="Add Contact" />
 
     </Grid>

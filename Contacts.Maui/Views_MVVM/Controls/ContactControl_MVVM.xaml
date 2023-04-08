@@ -18,6 +18,7 @@
                         <toolkit:TextValidationBehavior
                             x:Name="nameValidator"
                             Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                            IsValid="{Binding IsNameProvided}"
                             MinimumLength="1" />
                     </Entry.Behaviors>
                 </Entry>
@@ -36,8 +37,12 @@
                             <toolkit:TextValidationBehavior
                                 toolkit:MultiValidationBehavior.Error="Email is required."
                                 Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                                IsValid="{Binding IsEmailProvided}"
                                 MinimumLength="1" />
-                            <toolkit:EmailValidationBehavior toolkit:MultiValidationBehavior.Error="Email format is invalid." Flags="ValidateOnAttaching,ValidateOnValueChanged" />
+                            <toolkit:EmailValidationBehavior
+                                toolkit:MultiValidationBehavior.Error="Email format is invalid."
+                                Flags="ValidateOnAttaching,ValidateOnValueChanged"
+                                IsValid="{Binding IsEmailFormatValid}" />
                         </toolkit:MultiValidationBehavior>
                     </Entry.Behaviors>
                 </Entry>
@@ -64,9 +69,12 @@
             </HorizontalStackLayout>
         </Frame>
 
-        <Button x:Name="btnSave" Text="Save" />
+        <Button
+            x:Name="btnSave"
+            Command="{Binding EditContactCommand}"
+            Text="Save" />
 
-        <Button x:Name="btnCancel" Text="Cancel" />
+        <Button Command="{Binding BackToContactsCommand}" Text="Cancel" />
 
     </VerticalStackLayout>
 </ContentView>
