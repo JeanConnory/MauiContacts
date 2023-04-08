@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using Contact.Plugins.DataStore.SQLLite;
 using Contacts.Maui.ViewModels;
 using Contacts.Maui.Views;
 using Contacts.Maui.Views_MVVM;
@@ -29,7 +30,9 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
-		builder.Services.AddSingleton<IContactRepository, ContactInMemoryRepository>();
+		//builder.Services.AddSingleton<IContactRepository, ContactInMemoryRepository>();
+		builder.Services.AddSingleton<IContactRepository, ContactSQLiteRepository>();
+
 		builder.Services.AddSingleton<IViewContactsUseCase, ViewContactsUseCase>();
 		builder.Services.AddSingleton<IViewContactUseCase, ViewContactUseCase>();
 		builder.Services.AddTransient<IAddContactUseCase, AddContactUseCase>(); //Não é usado com frequencia por isso tá transient

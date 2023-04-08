@@ -12,7 +12,7 @@ namespace Contacts.Maui.ViewModels
 		private readonly IViewContactsUseCase _viewContactsUseCase;
 		private readonly IDeleteContactUseCase _deleteContactUseCase;
 
-		public ObservableCollection<Contact> Contacts { get; set; }
+		public ObservableCollection<Contacts.CoreBusiness.Contact> Contacts { get; set; }
 
 		private string filterText;
 
@@ -31,7 +31,7 @@ namespace Contacts.Maui.ViewModels
         {
 			_viewContactsUseCase = viewContactsUseCase;
 			_deleteContactUseCase = deleteContactUseCase;
-			this.Contacts = new ObservableCollection<Contact>();
+			this.Contacts = new ObservableCollection<Contacts.CoreBusiness.Contact>();
 		}
 
 		public async Task LoadContactAsync(string filterText = null)

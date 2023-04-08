@@ -16,7 +16,7 @@ public partial class AddContactPage : ContentPage
 
 	private async void contactCtrl_OnSave(object sender, EventArgs e)
 	{
-		await _addContactUseCase.ExecuteAsync(new Contact
+		await _addContactUseCase.ExecuteAsync(new Contacts.CoreBusiness.Contact
 		{
 			Name = contactCtrl.Name,
 			Email = contactCtrl.Email,

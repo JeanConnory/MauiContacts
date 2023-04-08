@@ -9,12 +9,12 @@ namespace Contacts.Maui.ViewModels
 {
 	public partial class ContactViewModel : ObservableObject
 	{
-        private Contact contact;
+        private Contacts.CoreBusiness.Contact contact;
 		private readonly IViewContactUseCase _viewContactUseCase;
 		private readonly IEditContactUseCase _editContactUseCase;
 		private readonly IAddContactUseCase _addContactUseCase;
 
-		public Contact Contact 
+		public Contacts.CoreBusiness.Contact Contact 
         {
             get => contact;
             set
@@ -31,7 +31,7 @@ namespace Contacts.Maui.ViewModels
 
 		public ContactViewModel(IViewContactUseCase viewContactUseCase, IEditContactUseCase editContactUseCase, IAddContactUseCase addContactUseCase)
         {
-            this.Contact = new Contact();
+            this.Contact = new Contacts.CoreBusiness.Contact();
 			_viewContactUseCase = viewContactUseCase;
 			_editContactUseCase = editContactUseCase;
 			_addContactUseCase = addContactUseCase;

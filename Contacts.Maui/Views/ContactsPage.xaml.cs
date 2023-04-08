@@ -30,7 +30,7 @@ public partial class ContactsPage : ContentPage
 	{
 		if (listContacts.SelectedItem != null)
 		{
-			await Shell.Current.GoToAsync($"{nameof(EditContactPage)}?Id={((Contact)listContacts.SelectedItem).ContactId}");
+			await Shell.Current.GoToAsync($"{nameof(EditContactPage)}?Id={((Contacts.CoreBusiness.Contact)listContacts.SelectedItem).ContactId}");
 		}
 	}
 
@@ -47,7 +47,7 @@ public partial class ContactsPage : ContentPage
 	private async void Delete_Clicked(object sender, EventArgs e)
 	{
 		var menuItem = sender as MenuItem;
-		var contact = menuItem.CommandParameter as Contact;
+		var contact = menuItem.CommandParameter as Contacts.CoreBusiness.Contact;
 		//ContactRepository.DeleteContact(contact.ContactId);
 		await _deleteContactUseCase.ExecuteAsync(contact.ContactId);
 
@@ -63,7 +63,7 @@ public partial class ContactsPage : ContentPage
 	private async void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
 	{
 		//var contacts = new ObservableCollection<Contact>(ContactRepository.SearchContacts(((SearchBar)sender).Text));
-		var contacts = new ObservableCollection<Contact>(await _viewContactsUseCase.ExecuteAsync(((SearchBar)sender).Text));
+		var contacts = new ObservableCollection<Contacts.CoreBusiness.Contact>(await _viewContactsUseCase.ExecuteAsync(((SearchBar)sender).Text));
 		listContacts.ItemsSource = contacts;
 	}
 } 
