@@ -5,15 +5,17 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Maui", "Contacts.Maui\Contacts.Maui.csproj", "{3D25F74E-3B5A-4703-8A0F-70C60D54FF22}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.CoreBusiness", "Contacts.CoreBusiness\Contacts.CoreBusiness.csproj", "{8BE3078E-6992-4BDC-9374-44EEF7A596B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.CoreBusiness", "Contacts.CoreBusiness\Contacts.CoreBusiness.csproj", "{8BE3078E-6992-4BDC-9374-44EEF7A596B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.UseCases", "Contacts.UseCases\Contacts.UseCases.csproj", "{AFE176BC-B75D-4B01-8FCE-2E759C9E2FC6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.UseCases", "Contacts.UseCases\Contacts.UseCases.csproj", "{AFE176BC-B75D-4B01-8FCE-2E759C9E2FC6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{55E08ABE-DFCE-4986-9B50-DCA75C7C863F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.Plugins.DataStore.InMemory", "Plugins\Contacts.Plugins.DataStore.InMemory\Contacts.Plugins.DataStore.InMemory.csproj", "{BE0FAC36-8C6B-4FC5-A76E-03A70402E815}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contacts.Plugins.DataStore.InMemory", "Plugins\Contacts.Plugins.DataStore.InMemory\Contacts.Plugins.DataStore.InMemory.csproj", "{BE0FAC36-8C6B-4FC5-A76E-03A70402E815}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contact.Plugins.DataStore.SQLLite", "Plugins\Contact.Plugins.DataStore.SQLLite\Contact.Plugins.DataStore.SQLLite.csproj", "{3070B720-E7DA-4B6C-B5E1-8F1745E2D929}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contact.Plugins.DataStore.SQLLite", "Plugins\Contact.Plugins.DataStore.SQLLite\Contact.Plugins.DataStore.SQLLite.csproj", "{3070B720-E7DA-4B6C-B5E1-8F1745E2D929}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contacts.WebApi", "Contacts.WebApi\Contacts.WebApi.csproj", "{A75ECE34-79CF-4486-BAA6-20B6A3A89ABB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{3070B720-E7DA-4B6C-B5E1-8F1745E2D929}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3070B720-E7DA-4B6C-B5E1-8F1745E2D929}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3070B720-E7DA-4B6C-B5E1-8F1745E2D929}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A75ECE34-79CF-4486-BAA6-20B6A3A89ABB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A75ECE34-79CF-4486-BAA6-20B6A3A89ABB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A75ECE34-79CF-4486-BAA6-20B6A3A89ABB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A75ECE34-79CF-4486-BAA6-20B6A3A89ABB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
